@@ -1,0 +1,317 @@
+{{page-title "Charts"}}
+<div class="container-fluid px-0" style="max-width: 90%; margin: 0 auto;">
+
+    <Navbar />
+
+    <div class="container my-5">
+        <LinkTo @route="resources" class="position-fixed top-0 end-0 
+         m-2 mt-5 me-4
+         mt-md-7 me-md-8
+         text-decoration-none d-flex gap-2 align-items-center z-3">
+            <span style="font-size: 2rem; color: rgb(2, 9, 137);">&#8592;</span>
+            <span class="text-primary">Back</span>
+        </LinkTo>
+        {{#if (eq this.model.type "charts")}}
+        <h3 class="text-center mb-4">Charts</h3>
+
+        <div class="accordion accordion-flush" id="accordionCharts">
+
+            <!-- Chart 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                        style="background-color: #f8d665;" data-bs-target="#chartOne">
+                        Chart 1
+                    </button>
+                </h2>
+
+                <div id="chartOne" class="accordion-collapse collapse" data-bs-parent="#accordionCharts">
+                    <div class="accordion-body">
+
+                        <div class="row g-4">
+
+                            <!-- Card 1 -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Video"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Chart explanation video 1</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Video"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Chart explanation video 2</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header mt-3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        style="background-color: #f8d665;" data-bs-target="#chartTwo">
+                        Chart 2
+                    </button>
+                </h2>
+
+                <div id="chartTwo" class="accordion-collapse collapse" data-bs-parent="#accordionCharts">
+                    <div class="accordion-body">
+
+                        <div class="row g-4">
+
+                            <div class="col-12 col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Chart 2 video</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Chart 2 video</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Chart 2 video</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header mt-3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        style="background-color: #f8d665;" data-bs-target="#chartThree">
+                        Chart 3
+                    </button>
+                </h2>
+
+                <div id="chartThree" class="accordion-collapse collapse" data-bs-parent="#accordionCharts">
+                    <div class="accordion-body">
+
+                        <div class="row g-4">
+
+                            <div class="col-12 col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Chart 2 video</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Chart 2 video</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Chart 2 video</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header mt-3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        style="background-color: #f8d665;" data-bs-target="#chartfour">
+                        Chart 4
+                    </button>
+                </h2>
+
+                <div id="chartfour" class="accordion-collapse collapse" data-bs-parent="#accordionCharts">
+                    <div class="accordion-body">
+
+                        <div class="row g-4">
+
+                            <div class="col-12 col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Chart 2 video</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {{/if}}
+        {{#if (eq this.model.type "vocabulary")}}
+        <h3 class="text-center mb-4">Vocabulary</h3>
+
+        <div class="container my-4">
+            <div class="row g-4">
+
+                <!-- Card 1 -->
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://cdn.pixabay.com/photo/2017/07/24/19/57/tiger-2535888_640.jpg"
+                            class="card-img-top" alt="card1">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">Animal Cards</h2>
+                            {{!-- <p class="card-text">Meaning of word 1</p> --}}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg"
+                            class="card-img-top" alt="card2">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">Nature Cards</h2>
+                            {{!-- <p class="card-text">Meaning of word 2</p> --}}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://static.vecteezy.com/system/resources/previews/012/966/179/large_2x/various-kinds-of-fresh-and-healthy-vegetables-in-traditional-markets-colorful-vegetable-background-free-photo.JPG"
+                            class="card-img-top" alt="card3">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">Vegetables Cards</h2>
+                            {{!-- <p class="card-text">Meaning of word 3</p> --}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {{/if}}
+        {{#if (eq this.model.type "spoken")}}
+        <h3 class="text-center mb-3">Spoken English Activity</h3>
+        <div class="row g-4">
+
+            <!-- Card 1 -->
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Video" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Chart explanation video 1</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Video" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Chart explanation video 2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Video" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Chart explanation video 2</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {{/if}}
+        {{#if (eq this.model.type "annual")}}
+                <h3 class="text-center mb-lg-5">Annual Days</h3>
+
+        <button class="btn custom-btn w-100 text-center mb-3">
+            Achievers Hub Public School
+        </button>
+        <button class="btn custom-btn w-100 text-center mb-3">
+            Dayanand Model Senior Secondary
+        </button>
+         <button class="btn custom-btn w-100 text-center mb-3">
+           Maxbuddy Rising School
+        </button>
+         <button class="btn custom-btn w-100 text-center mb-3">
+           Tibetan Children's School
+        </button>
+        <button class="btn custom-btn w-100 text-center mb-3">
+           Sambhota Tibetan School
+        </button>
+       
+        {{/if}}
+    </div>
+</div>
+
+
+
+
+{{outlet}}

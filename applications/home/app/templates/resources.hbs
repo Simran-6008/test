@@ -2,21 +2,36 @@
 <div class="container-fluid px-0" style="max-width: 90%; margin: 0 auto;">
     <Navbar />
 
-    <div class="row justify-content-center w-100 my-5">
-        <div class="col-12 col-md-7 col-lg-6 text-center d-flex flex-column gap-3">
+    <div class="container my-5">
+  <div class="row justify-content-center">
+    
+    <div class="col-12 col-md-7 col-lg-6 text-center d-flex flex-column gap-3 align-items-center">
 
-            <button class="btn custom-btn w-100">Charts</button>
-            <button class="btn custom-btn w-100">Vocabulary Cards</button>
-            <button class="btn custom-btn w-100">Spoken English Activity</button>
-            <button class="btn custom-btn w-100">Annual Days</button>
+      <LinkTo @route="charts" @query={{hash type="charts"}} class="btn custom-btn w-100">
+        Charts
+      </LinkTo>
 
-            <LinkTo @route="index" class="mt-4 text-decoration-none d-flex flex-column align-items-center">
-                <span style="font-size: 2rem; color: rgb(2, 9, 137);">&#8592;</span>
-                <span class="text-primary">Go to Home</span>
-            </LinkTo>
+      <LinkTo @route="charts" @query={{hash type="vocabulary"}} class="btn custom-btn w-100">
+        Vocabulary Cards
+      </LinkTo>
 
-        </div>
+      <LinkTo @route="charts" @query={{hash type="spoken"}} class="btn custom-btn w-100">
+        Spoken English Activity
+      </LinkTo>
+
+      <LinkTo @route="charts" @query={{hash type="annual"}} class="btn custom-btn w-100">
+        Annual Days
+      </LinkTo>
+
+      <LinkTo @route="index" class="mt-4 text-decoration-none d-flex flex-column align-items-center">
+        <span style="font-size: 2rem; color: rgb(2, 9, 137);">&#8592;</span>
+        <span class="text-primary">Go to Home</span>
+      </LinkTo>
+
     </div>
+
+  </div>
+</div>
 </div>
 
 
