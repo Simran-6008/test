@@ -52,6 +52,19 @@ width: 100vw;
 
 @import "ember-power-select";
 
+/* Default (mobile first) */
+.logo-img {
+	height: 100px;
+	width: auto;
+}
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+	.logo-img {
+		height: 150px;
+	}
+}
+
 // Landing page button
 .custom-btn {
 	background-color: #ffc107;
@@ -83,24 +96,147 @@ width: 100vw;
 	}
 }
 
-/* Logo responsive */
-.logo-img {
-	max-height: 100px;
+// ....................................
+.main-container {
+	max-width: 90%;
+	margin: 0 auto;
 }
 
-/* Heading default (desktop) */
-.heading-text {
-	font-size: 2rem;
+/* IMAGE */
+.image-section {
+	position: relative;
+	margin-top: 20px;
 }
 
-/* Mobile view logo and heading*/
+.hero-image {
+	width: 100%;
+}
+
+/* CARDS */
+.cards-section {
+	margin-top: -120px;
+	padding-bottom: 40px;
+	position: relative;
+	z-index: 2;
+}
+
+.custom-card {
+	background: #fff;
+	border-radius: 16px;
+	padding: 30px 20px 60px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	transition: all 0.3s ease;
+}
+
+/* DESKTOP FIX (CENTER + LESS GAP + SAME SIZE) */
+@media (min-width: 992px) {
+
+	/* row ko control kar rahe */
+	.desktop-center {
+		justify-content: center !important;
+		gap: 12px;
+		/* 🔥 gap kam kiya */
+	}
+
+	.desktop-center .col-sm-4 {
+		flex: 0 0 auto;
+		width: auto;
+	}
+
+	.custom-card {
+		width: 260px;
+		max-width: 260px;
+	}
+}
+
+/* hover effect */
+.custom-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* text */
+.custom-card h5 {
+	margin-top: 15px;
+	font-weight: 600;
+	color: #2f3a4a;
+}
+
+.custom-card p {
+	color: #6c757d;
+	font-size: 14px;
+	margin-bottom: 0;
+}
+
+/* ICON */
+.icon-circle {
+	width: 65px;
+	height: 65px;
+	background-color: #fac458;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.icon-circle i {
+	font-size: 26px;
+	color: white;
+}
+
+/* ARROW */
+.arrow-btn {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	background: #fac458;
+	border: none;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+}
+
+/*ONLY MOBILE STACK */
+@media (max-width: 575px) {
+
+	.desktop-cards {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.desktop-card-col {
+		width: 100%;
+		max-width: 350px;
+		margin-bottom: 15px;
+	}
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+	.cards-section {
+		margin-top: -90px;
+	}
+}
+
+/* Mobile */
 @media (max-width: 576px) {
-	.logo-img {
-		max-height: 50px;
-	}
-
-	.heading-text {
-		font-size: 1rem;
-		line-height: 1.2;
+	.cards-section {
+		margin-top: 20px;
 	}
 }
+
+
+// .................MODAL WINDOW...........................
+
