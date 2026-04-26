@@ -240,3 +240,41 @@ width: 100vw;
 
 // .................MODAL WINDOW...........................
 
+/* Modal width control */
+.custom-modal-width {
+	max-width: 85%;
+	width: 100%;
+}
+
+/* BACKDROP (black overlay) ko halka karo */
+.modal-backdrop.show {
+	opacity: 0.3 !important;   /* 🔥 thoda aur halka */
+}
+
+/* 🔥 FORCE CLEAN WHITE MODAL */
+.modal.show .modal-content {
+	background-color: #ffffff !important;
+	opacity: 1 !important;   /* 🔥 grey effect hata diya */
+	border-radius: 12px;
+	padding: 20px;
+	box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+/* Text visibility improve */
+.modal .modal-body p {
+	color: #000 !important;
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+/* Heading strong dikhe */
+.modal .modal-title {
+	font-weight: 600;
+	color: #000 !important;
+}
+
+/* Sub heading */
+.modal h6 {
+	color: #000 !important;
+	font-weight: 500;
+}

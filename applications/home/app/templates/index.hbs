@@ -3,13 +3,18 @@
     <section class="hero-section text-center">
         {{!-- Heading --}}
         <h1 class="mt-4 text-primary">Welcome to FiRST PiCk Phonics</h1>
-        <h5 class="text-primary">Every Child Can Read!</h5>
+        <h4 class="text-primary">Every Child Can Read!</h4>
 
     </section>
 
-    {{!-- IMAGE SECTION --}}
-    <section class="image-section">
-        <img src="/assets/img/landingimg.jpeg" class="hero-image" alt="students">
+    {{!-- Desktop + Tablet Banner --}}
+    <section class="image-section d-none d-md-block">
+        <img src="/assets/img/bannerimg.PNG" class="hero-image w-100" alt="students">
+    </section>
+
+    {{!-- Mobile Banner --}}
+    <section class="image-section d-block d-md-none">
+        <img src="/assets/img/mobilebanner.jpeg" class="hero-image w-100" alt="students">
     </section>
 
     {{!-- CARDS SECTION --}}
@@ -26,13 +31,16 @@
                             <i class="fa-solid fa-circle-info text-light" style="font-size: 35px;"></i>
                         </div>
 
-                        <h5>About</h5>
-                        <p>Learn more about our program</p>
+                        <h5 class="text-primary">About</h5>
+                        <p class="text-primary">Learn more about our program</p>
 
 
-                        <button class="arrow-btn text-primary">
+                        <button class="arrow-btn text-primary" type="button">
                             →
                         </button>
+
+                        
+
 
 
                     </div>
@@ -48,11 +56,11 @@
                             <i class="fa-solid fa-file-lines text-light" style="font-size: 35px;"></i>
                         </div>
 
-                        <h5>Facilitation Note</h5>
-                        <p>Guidelines and notes for facilitators</p>
+                        <h5 class="text-primary">Facilitation Note</h5>
+                        <p class="text-primary">Guidelines and notes for facilitators</p>
 
                         <button class="arrow-btn text-primary" data-bs-toggle="modal"
-                            data-bs-target="#facilitationModal">
+                            data-bs-target="#facilitationModal" type="button">
                             →
                         </button>
 
@@ -67,8 +75,8 @@
                             <i class="fa-solid fa-book-open text-light" style="font-size: 35px;"></i>
                         </div>
 
-                        <h5>Resources</h5>
-                        <p>Educational materials and tools</p>
+                        <h5 class="text-primary">Resources</h5>
+                        <p class="text-primary">Educational materials and tools</p>
 
                         <LinkTo @route="resources" class="arrow-btn text-decoration-none text-text-primary">
                             →

@@ -1,62 +1,53 @@
 {{page-title "Charts"}}
 <div class="container-fluid px-0" style="max-width: 90%; margin: 0 auto;">
 
-    <Navbar />
+    <ChartNav />
 
     <div class="container my-5">
-        <LinkTo @route="resources" class="position-fixed top-0 end-0 
-         m-2 mt-5 me-4
-         mt-md-7 me-md-8
-         text-decoration-none d-flex gap-2 align-items-center z-3">
-            <span style="font-size: 2rem; color: rgb(2, 9, 137);">&#8592;</span>
-            <span class="text-primary">Back</span>
-        </LinkTo>
         {{#if (eq this.model.type "charts")}}
         <h3 class="text-center mb-4">Charts</h3>
 
         <div class="accordion accordion-flush" id="accordionCharts">
 
             {{!-- Chart 1 --}}
-            {{#each this.model.charts as |chart index|}}
-           
+            {{#each this.model.reversedCharts as |chart index|}}
+
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         style="background-color: #f8d665;" data-bs-target="#chart{{index}}">
                         {{chart.modules.title}}
                     </button>
                 </h2>
 
                 <div id="chart{{index}}" class="accordion-collapse collapse" data-bs-parent="#accordionCharts">
-                    <div class="accordion-body">
 
+                    <div class="accordion-body">
                         <div class="row g-4">
 
-
-                        {{#each chart.modules.url as |video|}}
+                            {{#each chart.modules.url as |video|}}
                             <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="card h-100 shadow-sm">
                                     <div class="ratio ratio-16x9">
                                         <iframe src="{{video}}" title="Video" allowfullscreen></iframe>
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-text">Chart explanation video 1</p>
+                                        <p class="card-text">Chart explanation video</p>
                                     </div>
                                 </div>
                             </div>
-                        {{/each}}
-
-                           
+                            {{/each}}
 
                         </div>
-
                     </div>
+
                 </div>
             </div>
-            {{/each}}
-             
 
-           
+            {{/each}}
+
+
+
 
         </div>
         {{/if}}
@@ -66,11 +57,10 @@
         <div class="container my-4">
             <div class="row g-4">
 
-                  {{#each this.model.vocabulary as |vocabulary index|}}
+                {{#each this.model.vocabulary as |vocabulary index|}}
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="{{vocabulary.modules.photo}}"
-                            class="card-img-top" alt="card1">
+                        <img src="{{vocabulary.modules.photo}}" class="card-img-top" alt="card1">
                         <div class="card-body">
                             <h2 class="card-title text-center"> {{vocabulary.modules.title}}</h2>
                             {{!-- <p class="card-text">Meaning of word 1</p> --}}
@@ -78,10 +68,10 @@
                     </div>
                 </div>
                 {{/each}}
-         
 
-                
-                
+
+
+
 
             </div>
         </div>
@@ -90,7 +80,7 @@
         <h3 class="text-center mb-3">Spoken English Activity</h3>
         <div class="row g-4">
 
-             {{#each this.model.spoken as |spoken index|}}
+            {{#each this.model.spoken as |spoken index|}}
 
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
@@ -103,18 +93,19 @@
                 </div>
             </div>
 
-           {{/each}}
+            {{/each}}
 
         </div>
         {{/if}}
+        
         {{#if (eq this.model.type "annual")}}
         <h3 class="text-center mb-lg-5">Annual Days</h3>
-        
+
         {{#each this.model.annual as |annual index|}}
-        <button class="btn custom-btn w-100 text-center mb-3" type="button"> {{annual.modules.title}}  </button>        
-       {{/each}}
-        
-        
+        <button class="btn custom-btn w-100 text-center mb-3" type="button"> {{annual.modules.title}} </button>
+        {{/each}}
+
+
 
         {{/if}}
     </div>
