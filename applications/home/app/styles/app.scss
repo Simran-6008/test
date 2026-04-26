@@ -3,7 +3,7 @@
 $font-family-sans-serif: "gf_EB_Garamond variant1", Tofu !default;
 $display-font-family: "gf_EB_Garamond variant1", Tofu !default;
 
-$primary: #011969 !default;
+$primary: #031a63 !default;
 $secondary: #f5f5f5 !default;
 $success: #00ff00 !default;
 $info: #0000ff !default;
@@ -112,91 +112,12 @@ width: 100vw;
 	width: 100%;
 }
 
-/* CARDS */
-.cards-section {
-	margin-top: -120px;
-	padding-bottom: 40px;
-	position: relative;
-	z-index: 2;
-}
-
-.custom-card {
-	background: #fff;
-	border-radius: 16px;
-	padding: 30px 20px 60px;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-	position: relative;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	transition: all 0.3s ease;
-}
-
-/* DESKTOP FIX (CENTER + LESS GAP + SAME SIZE) */
-@media (min-width: 992px) {
-
-	/* row ko control kar rahe */
-	.desktop-center {
-		justify-content: center !important;
-		gap: 12px;
-		/* 🔥 gap kam kiya */
-	}
-
-	.desktop-center .col-sm-4 {
-		flex: 0 0 auto;
-		width: auto;
-	}
-
-	.custom-card {
-		width: 260px;
-		max-width: 260px;
-	}
-}
-
-/* hover effect */
-.custom-card:hover {
-	transform: translateY(-6px);
-	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
-}
-
-/* text */
-.custom-card h5 {
-	margin-top: 15px;
-	font-weight: 600;
-	color: #2f3a4a;
-}
-
-.custom-card p {
-	color: #6c757d;
-	font-size: 14px;
-	margin-bottom: 0;
-}
-
-/* ICON */
-.icon-circle {
-	width: 65px;
-	height: 65px;
-	background-color: #fac458;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.icon-circle i {
-	font-size: 26px;
-	color: white;
-}
-
 /* ARROW */
 .arrow-btn {
 	position: absolute;
 	bottom: 15px;
 	right: 15px;
-	background: #fac458;
+	background: #fac35c;
 	border: none;
 	width: 35px;
 	height: 35px;
@@ -208,73 +129,90 @@ width: 100vw;
 	line-height: 1;
 }
 
-/*ONLY MOBILE STACK */
-@media (max-width: 575px) {
+.back-home-link span {
+	line-height: 1;
+	margin: 0;
+}
 
-	.desktop-cards {
+
+
+// ............................................................
+
+/* CARD SIZE SMALLER */
+.facilitation-card {
+	background: #f5f3f3;
+	border-radius: 30px;
+	padding: 40px 20px;
+	width: 320px;
+	height: 280px;
+	text-align: center;
+	cursor: pointer;
+	transition: 0.3s;
+	box-shadow:
+		0 12px 28px rgba(0, 0, 0, 0.12),
+		0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.facilitation-card:hover {
+	transform: translateY(-5px);
+}
+
+/* ICON */
+.icon-circle {
+	width: 80px;
+	height: 80px;
+	background: #fac35c;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+
+.icon-circle i {
+	font-size: 28px;
+}
+
+/* TITLE */
+.card-title {
+	font-size: 22px;
+	color: #0b2a6f;
+}
+
+/* SUBTITLE */
+.card-subtitle {
+	font-size: 14px;
+	color: #0b2a6f;
+}
+
+/* ARROW BUTTON */
+.arrow-btn {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: #fac35c;
+	border: none;
+}
+
+.arrow-btn i {
+	color: #0b2a6f;
+}
+
+/* GAP CONTROL (kam gap) */
+.cards-wrapper {
+	gap: 16px;
+}
+
+// Cards alignment on mobile display
+@media (max-width: 767px) {
+	.cards-wrapper {
 		flex-direction: column;
 		align-items: center;
 	}
 
-	.desktop-card-col {
-		width: 100%;
+	.facilitation-card {
+		width: 90%;
 		max-width: 350px;
-		margin-bottom: 15px;
 	}
-}
-
-/* Tablet */
-@media (max-width: 992px) {
-	.cards-section {
-		margin-top: -90px;
-	}
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-	.cards-section {
-		margin-top: 20px;
-	}
-}
-
-
-// .................MODAL WINDOW...........................
-
-/* Modal width control */
-.custom-modal-width {
-	max-width: 85%;
-	width: 100%;
-}
-
-/* BACKDROP (black overlay) ko halka karo */
-.modal-backdrop.show {
-	opacity: 0.3 !important;   /* 🔥 thoda aur halka */
-}
-
-/* 🔥 FORCE CLEAN WHITE MODAL */
-.modal.show .modal-content {
-	background-color: #ffffff !important;
-	opacity: 1 !important;   /* 🔥 grey effect hata diya */
-	border-radius: 12px;
-	padding: 20px;
-	box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-}
-
-/* Text visibility improve */
-.modal .modal-body p {
-	color: #000 !important;
-	font-size: 15px;
-	line-height: 1.6;
-}
-
-/* Heading strong dikhe */
-.modal .modal-title {
-	font-weight: 600;
-	color: #000 !important;
-}
-
-/* Sub heading */
-.modal h6 {
-	color: #000 !important;
-	font-weight: 500;
 }

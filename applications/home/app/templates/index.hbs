@@ -1,8 +1,16 @@
 <div class="container-fluid px-0 main-container">
     <Navbar />
-    <section class="hero-section text-center">
+    <section class="hero-section text-center mb-4">
         {{!-- Heading --}}
-        <h1 class="mt-4 text-primary">Welcome to FiRST PiCk Phonics</h1>
+        {{!-- Desktop + Tablet --}}
+        <h1 class="mt-4 text-primary d-none d-md-block">
+            Welcome to FiRST PiCk Phonics
+        </h1>
+
+        {{!-- Mobile --}}
+        <h2 class="mt-4 text-primary d-block d-md-none">
+            Welcome to FiRST PiCk Phonics
+        </h2>
         <h4 class="text-primary">Every Child Can Read!</h4>
 
     </section>
@@ -17,78 +25,250 @@
         <img src="/assets/img/mobilebanner.jpeg" class="hero-image w-100" alt="students">
     </section>
 
-    {{!-- CARDS SECTION --}}
-    <section class="cards-section">
-        <div class="container px-3">
 
-            <div class="row justify-content-center align-items-stretch g-3 desktop-center">
+    {{!-- .......................CARD SECTION........................ --}}
+    <div class="cards-wrapper d-flex justify-content-center align-items-center gap-3 my-4">
 
-                {{!-- ABOUT --}}
-                <div class="col-12 col-sm-4 d-flex align-items-stretch">
-                    <div class="custom-card text-center">
+        {{!-- CARD 1 --}}
+        <div class="facilitation-card position-relative" role="button" data-bs-toggle="modal"
+            data-bs-target="#facilitationModal">
 
-                        <div class="icon-circle">
-                            <i class="fa-solid fa-circle-info text-light" style="font-size: 35px;"></i>
-                        </div>
-
-                        <h5 class="text-primary">About</h5>
-                        <p class="text-primary">Learn more about our program</p>
-
-
-                        <button class="arrow-btn text-primary" type="button">
-                            →
-                        </button>
-
-                        
-
-
-
-                    </div>
-                </div>
-
-
-
-                {{!--------------------------------------- FACILITATION --}}
-                <div class="col-12 col-sm-4 d-flex align-items-stretch">
-                    <div class="custom-card text-center">
-
-                        <div class="icon-circle">
-                            <i class="fa-solid fa-file-lines text-light" style="font-size: 35px;"></i>
-                        </div>
-
-                        <h5 class="text-primary">Facilitation Note</h5>
-                        <p class="text-primary">Guidelines and notes for facilitators</p>
-
-                        <button class="arrow-btn text-primary" data-bs-toggle="modal"
-                            data-bs-target="#facilitationModal" type="button">
-                            →
-                        </button>
-
-                    </div>
-                </div>
-
-                {{!-- RESOURCES --}}
-                <div class="col-12 col-sm-4 d-flex align-items-stretch">
-                    <div class="custom-card text-center">
-
-                        <div class="icon-circle">
-                            <i class="fa-solid fa-book-open text-light" style="font-size: 35px;"></i>
-                        </div>
-
-                        <h5 class="text-primary">Resources</h5>
-                        <p class="text-primary">Educational materials and tools</p>
-
-                        <LinkTo @route="resources" class="arrow-btn text-decoration-none text-text-primary">
-                            →
-                        </LinkTo>
-
-                    </div>
-                </div>
-
+            {{!-- Top Icon --}}
+            <div class="icon-circle d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-circle-info text-light" style="font-size: 35px;"></i>
             </div>
 
+            {{!-- Heading --}}
+            <h1 class="card-title mt-3">About</h1>
+
+            {{!-- Subheading --}}
+            <p class="card-subtitle">
+                Learn more about our program
+            </p>
+
+            {{!-- Arrow Button (optional – same modal open karega) --}}
+            <button class="arrow-btn" type="button">
+                <i class="bi bi-arrow-right"> →</i>
+            </button>
+
         </div>
-    </section>
+        {{!-- About modal --}}
+        <div class="modal fade" id="facilitationModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h2 class="modal-title">About FiRST PiCk Phonics</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <h4>Phonics</h4>
+                        <p>Phonics is a method for teaching reading and writing to beginners. Phonics teaches the
+                            relationship between the sounds of the spoken language and the letters (or groups of
+                            letters) of the written language.
+                        </p>
+                        <h4>Phonics Rules</h4>
+                        <p>According to understood.org, about 84% of English words follow the language's soundspelling
+                            rules, which are also known as phonics rules. About 50% of words can be spelled
+                            accurately using sound-symbol correspondence patterns alone, and another 36% can be
+                            spelled accurately except for one speech sound. The remaining 4% of words are considered
+                            irregular. These rules can be a helpful tool for beginning readers, struggling readers, and
+                            English Language Learners.
+                        </p>
+                        <h4>The FiRST PiCk Phonics Program</h4>
+                        <p>
+                            This program is specifically designed for students in rural India between the ages of 8-12
+                            years, although younger children can also benefit from it. It teaches reading skills by
+                            introducing phonics rules sequentially to beginning readers, using words and sentences
+                            they are either familiar with or likely to be encountered frequently. All sentences are
+                            grounded in the rural Indian context. <br>
+                            Reading and comprehension need to go hand in hand. The FiRST PiCk Phonics Program
+                            integrates phonics instruction with vocabulary instruction using activities, such as
+                            vocabulary cards, songs, poems, stories, dialogs and plays.
+                        </p>
+                        <h4>Program Designer</h4>
+                        <p>
+                            A learning designer by profession, Puja created online learning programs for large
+                            organizations for over 20 years before moving back to India and settling down in
+                            Dharamshala. She has been teaching English speaking and reading in the government
+                            Primary Schools in and around Dharamshala since 2014. A design assignment in 2015 for
+                            an American Teacher Training company got her excited about teaching reading using
+                            Phonics. The FiRST PiCk Phonics program is her brainchild, which draws from her extensive
+                            knowledge about learning theories and design principles, and last but not the least, her
+                            deep love for the children of Rakkar.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {{!-- CARD 2 --}}
+        <div class="facilitation-card position-relative" role="button" data-bs-toggle="modal"
+            data-bs-target="#facilitationNoteModal">
+            <div class="icon-circle d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-file-lines text-light" style="font-size: 35px;"></i>
+            </div>
+
+            <h1 class="card-title mt-3">Facilitation Note</h1>
+            <p class="card-subtitle">Guidelines and notes for facilitators</p>
+
+            <button class="arrow-btn" data-bs-toggle="modal" data-bs-target="#modal2" type="button">
+                <i class="bi bi-arrow-right"> →</i>
+            </button>
+        </div>
+
+        {{!-- FACILITATION MODAL............... --}}
+        <div class="modal fade" id="facilitationNoteModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h2 class="modal-title">Facilitation Notes</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <h4>Logistics</h4>
+
+                        <ul>
+                            <li>Each session lasts between 40 to 50 minutes, depending upon the number of students and
+                                their learning ability.</li>
+
+                            <li>The main resources for the program are 30 phonics reading charts that must be put up on
+                                walls during sessions. If possible, keep the charts up on the walls for students to read
+                                them during their free time. Make one or two students responsible for the safety of the
+                                charts.</li>
+
+                            <li>Intersperse phonics reading charts activities with reading/speaking activities. We have
+                                a set of matching cards, speaking activities and books that can be used to make classes
+                                engaging (See Annexure 1-12).</li>
+
+                            <li>The sessions mentioned are only for an estimate or a plan. There is a lot of overlaps
+                                between charts and number of sessions listed. A single session could be used for
+                                teaching multiple charts.</li>
+
+                            <li>If a class doesn’t catch up in a particular objective, feel free to roll back, slow down
+                                and repeat.</li>
+
+                            <li>Comprehension of sentences is as important as being able to read. Ensure that every
+                                sentence is not just read, but understood.</li>
+                        </ul>
+                        <h4>Dealing with Struggling Students</h4>
+                        <ul>
+                            <li>
+                                Remember, anyone can teach a student who already has a good base in reading. A good
+                                facilitator/teacher is one who can help struggling students catch up and learn to read.
+                                This is the main objective of a FiRST PiCk Phonics facilitator.
+                            </li>
+                            <li>
+                                If a student or two are struggling, seek help from other students to bring them up to
+                                the
+                                level during their free time. Most student like the additional responsibility and want
+                                to
+                                teach others.
+                            </li>
+                            <li>
+                                If there are two of you facilitating a class, split the class into two groups. Paying
+                                attention
+                                to individual students helps them learn faster.
+                            </li>
+                            <li>
+                                It is likely that a few students do not catch up despite personal attention. Discuss
+                                these
+                                situations with the class teacher, who can then help you decide the best course of
+                                action.
+                                This is especially relevant for students with intellectual or reading disabilities
+                                because we
+                                are not equipped to deal with these issues.
+                            </li>
+                            <li>
+                                Appreciate effort made by students. Use appreciation words like “very good” often and
+                                encourage students to clap for each other. If a struggling student makes progress,
+                                highlight it to the entire class and applaud the achievement.
+                            </li>
+                        </ul>
+                        <h4>Dealing with Indiscipline</h4>
+                        <ul>
+                            <li>
+                                Two key elements to facilitate learning in young students is engagement and lack of
+                                fear.
+                                Facilitators must not use verbal or physical violence of any kind. If a class is unruly
+                                or
+                                inattentive, it is the facilitator’s task to get their attention by changing the
+                                activity
+                                being
+                                done, or by adding elements of engagement in their teaching. Only in exceptional cases
+                                should students be asked to leave the class, after consulting with the class teacher
+                            </li>
+                        </ul>
+                        <h4>Fostering Cooperation Versus Competition </h4>
+                        <ul>
+                            <li>
+                                Unlike school education, where competition among students is the motivator, the FiRST
+                                PiCk Phonics program considers cooperation as its cornerstone. Facilitators must never
+                                let
+                                any student feel they are better or worse than others.
+                            </li>
+                            <li>
+                                A student who comprehends a certain concept faster than others should be encouraged
+                                to teach others. Applaud cooperation and empathy towards fellow classmates more than
+                                individual achievements.
+                            </li>
+                            <li>Individual competitions should never be used to encourage learning. Use team
+                                competitions, which foster cooperation among team members while competing with
+                                another team.
+                            </li>
+                        </ul>
+                        <h4>Progress Tracking and Annual Performance </h4>
+                        <ul>
+                            <li>Before implementing the Phonics Program, we conduct a Reading Assessment (Annexure
+                                12). This gives us an idea of the current reading levels of students. The same
+                                Assessment
+                                is conducted at the end of the year and the progress of the students is recorded.
+                            </li>
+                            <li>
+                                Most primary school children in rural India will never have the opportunity to come on
+                                stage and perform. FiRST PiCk, being primarily a theatre and poetry club, provides such
+                                an
+                                opportunity to students, combining theatre with English reading and speaking. The FiRST
+                                PiCk Phonics Program in every school must culminate in an annual function that includes
+                                skits, plays, poems, dances and reading activities, all in English.
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {{!-- CARD 3 --}}
+
+        <div class="facilitation-card position-relative">
+            <LinkTo @route="resources" class="text-decoration-none">
+                <div class="icon-circle d-flex align-items-center justify-content-center">
+                    <i class="fa-solid fa-book-open text-light" style="font-size: 35px;"></i>
+                </div>
+            </LinkTo>
+
+            <LinkTo @route="resources" class="text-decoration-none">
+                <h1 class="card-title mt-3">Resources</h1>
+            </LinkTo>
+
+            <LinkTo @route="resources" class="text-decoration-none">
+                <p class="card-subtitle">Educational materials and tools</p>
+            </LinkTo>
+
+            <LinkTo @route="resources" class="text-decoration-none">
+                <button class="arrow-btn" data-bs-toggle="modal" data-bs-target="#modal2" type="button">
+                    <i class="bi bi-arrow-right"> →</i>
+                </button>
+            </LinkTo>
+        </div>
+
+    </div>
 
 </div>
 

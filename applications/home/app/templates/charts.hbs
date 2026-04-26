@@ -4,17 +4,27 @@
     <ChartNav />
 
     <div class="container my-5">
-        {{#if (eq this.model.type "charts")}}
-        <h3 class="text-center mb-4">Charts</h3>
 
+        {{#if (eq this.model.type "charts")}}
+        <h1 class="text-center mb-3 text-primary">Charts</h1>
+
+        <form class="d-flex mb-3 justify-content-center">
+            <div class="d-flex">
+                <input class="form-control me-2 text-primary w-auto" type="search" placeholder="Search chart"
+                    aria-label="Search">
+                <button class="btn btn-outline-warning" type="submit">
+                    <span class="text-primary">Search</span>
+                </button>
+            </div>
+        </form>
         <div class="accordion accordion-flush" id="accordionCharts">
 
             {{!-- Chart 1 --}}
             {{#each this.model.reversedCharts as |chart index|}}
 
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            <div class="accordion-item mb-1">
+                <h2 class="accordion-header text-primary">
+                    <button class="accordion-button collapsed text-primary fs-4" type="button" data-bs-toggle="collapse"
                         style="background-color: #f8d665;" data-bs-target="#chart{{index}}">
                         {{chart.modules.title}}
                     </button>
@@ -25,18 +35,23 @@
                     <div class="accordion-body">
                         <div class="row g-4">
 
+                            {{#let chart.modules.video_title_or_description as |desc|}}
                             {{#each chart.modules.url as |video|}}
                             <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="card h-100 shadow-sm">
                                     <div class="ratio ratio-16x9">
                                         <iframe src="{{video}}" title="Video" allowfullscreen></iframe>
                                     </div>
+
                                     <div class="card-body">
-                                        <p class="card-text">Chart explanation video</p>
+                                        <p class="card-text text-primary">
+                                            {{desc}}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                             {{/each}}
+                            {{/let}}
 
                         </div>
                     </div>
@@ -97,7 +112,7 @@
 
         </div>
         {{/if}}
-        
+
         {{#if (eq this.model.type "annual")}}
         <h3 class="text-center mb-lg-5">Annual Days</h3>
 
