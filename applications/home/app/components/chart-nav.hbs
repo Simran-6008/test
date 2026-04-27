@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
-        <!-- Left: Logo -->
+        {{!-- Left: Logo --}}
         <LinkTo @route="index" class="navbar-brand">
             <img src="/assets/img/phonics-logo.jpeg" alt="logo" class="img-fluid logo-img">
         </LinkTo>
 
-        <!-- Right: Nav Links -->
-        <!-- DESKTOP / TABLET (md and above) -->
+        {{!-- Right: Nav Links --}}
+        {{!-- DESKTOP / TABLET (md and above) --}}
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-none d-md-flex flex-row gap-3">
             <li class="nav-item">
                 <LinkTo @route="resources" class="nav-link text-primary fs-4">
@@ -22,7 +22,7 @@
             </li>
         </ul>
 
-        <!-- MOBILE (below md) -->
+        {{!-- MOBILE (below md) --}}
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex d-md-none flex-column align-items-end">
             <li class="nav-item">
                 <LinkTo @route="resources" class="nav-link text-primary fs-4 py-1">

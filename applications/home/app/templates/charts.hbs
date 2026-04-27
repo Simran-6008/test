@@ -8,20 +8,18 @@
         {{#if (eq this.model.type "charts")}}
         <h1 class="text-center mb-3 text-primary">Charts</h1>
 
-        <form class="d-flex mb-3 justify-content-center">
+        <div class="d-flex mb-3 justify-content-center">
             <div class="d-flex">
                 <input class="form-control me-2 text-primary w-auto" type="search" placeholder="Search chart"
-                    aria-label="Search">
-                <button class="btn btn-outline-warning" type="submit">
+                    aria-label="Search" oninput={{this.onInputChange}} id="searchInput">
+                <button class="btn btn-outline-warning" type="button" onclick={{this.doSearch}}>
                     <span class="text-primary">Search</span>
                 </button>
             </div>
-        </form>
+        </div>
+
         <div class="accordion accordion-flush" id="accordionCharts">
-
-            {{!-- Chart 1 --}}
-            {{#each this.model.reversedCharts as |chart index|}}
-
+            {{#each this.filteredCharts as |chart index|}}
             <div class="accordion-item mb-1">
                 <h2 class="accordion-header text-primary">
                     <button class="accordion-button collapsed text-primary fs-4" type="button" data-bs-toggle="collapse"
@@ -29,74 +27,53 @@
                         {{chart.modules.title}}
                     </button>
                 </h2>
-
                 <div id="chart{{index}}" class="accordion-collapse collapse" data-bs-parent="#accordionCharts">
-
                     <div class="accordion-body">
                         <div class="row g-4">
-
-                            {{#let chart.modules.video_title_or_description as |desc|}}
                             {{#each chart.modules.url as |video|}}
                             <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="card h-100 shadow-sm">
                                     <div class="ratio ratio-16x9">
                                         <iframe src="{{video}}" title="Video" allowfullscreen></iframe>
                                     </div>
-
                                     <div class="card-body">
                                         <p class="card-text text-primary">
-                                            {{desc}}
+                                            {{chart.modules.title}}
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             {{/each}}
-                            {{/let}}
-
                         </div>
                     </div>
-
                 </div>
             </div>
-
             {{/each}}
-
-
-
-
         </div>
         {{/if}}
+
         {{#if (eq this.model.type "vocabulary")}}
         <h3 class="text-center mb-4">Vocabulary</h3>
-
         <div class="container my-4">
             <div class="row g-4">
-
-                {{#each this.model.vocabulary as |vocabulary index|}}
+                {{#each this.model.vocabulary as |vocabulary|}}
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="card h-100 shadow-sm">
                         <img src="{{vocabulary.modules.photo}}" class="card-img-top" alt="card1">
                         <div class="card-body">
-                            <h2 class="card-title text-center"> {{vocabulary.modules.title}}</h2>
-                            {{!-- <p class="card-text">Meaning of word 1</p> --}}
+                            <h2 class="card-title text-center">{{vocabulary.modules.title}}</h2>
                         </div>
                     </div>
                 </div>
                 {{/each}}
-
-
-
-
-
             </div>
         </div>
         {{/if}}
+
         {{#if (eq this.model.type "spoken")}}
         <h3 class="text-center mb-3">Spoken English Activity</h3>
         <div class="row g-4">
-
-            {{#each this.model.spoken as |spoken index|}}
-
+            {{#each this.model.spoken as |spoken|}}
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
                     <div class="ratio ratio-16x9">
@@ -107,26 +84,77 @@
                     </div>
                 </div>
             </div>
-
             {{/each}}
-
         </div>
         {{/if}}
+
+
 
         {{#if (eq this.model.type "annual")}}
         <h3 class="text-center mb-lg-5">Annual Days</h3>
 
         {{#each this.model.annual as |annual index|}}
-        <button class="btn custom-btn w-100 text-center mb-3" type="button"> {{annual.modules.title}} </button>
+
+        {{!-- Button --}}
+        <button class="btn custom-btn w-100 text-center mb-3" type="button" onclick={{fn this.openModal annual}}>
+            {{annual.modules.title}}
+        </button>
+
         {{/each}}
 
+        {{!-- Modal --}}
+        {{#if this.selectedAnnual}}
 
+        <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title text-primary">
+                            {{this.selectedAnnual.title}}
+                        </h5>
+                        <button type="button" class="btn-close" onclick={{this.closeModal}}>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row g-4">
+
+                            {{!-- Videos --}}
+                            {{#each this.selectedAnnual.modules.url as |video|}}
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="{{video}}" title="Video" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+
+                            {{!-- Photos --}}
+                            {{#each this.selectedAnnual.modules.photo as |photo|}}
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="card h-100 shadow-sm">
+                                    <img src="{{photo}}" class="card-img-top" alt="photo">
+                                </div>
+                            </div>
+                            {{/each}}
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick={{this.closeModal}}>
+                            Close
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {{/if}}
 
         {{/if}}
     </div>
 </div>
-
-
-
-
 {{outlet}}
