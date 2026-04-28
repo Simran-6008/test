@@ -6,6 +6,7 @@ import {  tracked} from '@glimmer/tracking';
 export default class ChartsController extends Controller {
   queryParams = ['type'];
   @tracked search = '';
+  
 
   get filteredCharts() {
     let charts = this.model.sortedCharts || [];

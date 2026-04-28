@@ -92,69 +92,43 @@
 
         {{#if (eq this.model.type "annual")}}
         <h3 class="text-center mb-lg-5">Annual Days</h3>
-
-        {{#each this.model.annual as |annual index|}}
-
-        {{!-- Button --}}
-        <button class="btn custom-btn w-100 text-center mb-3" type="button" onclick={{fn this.openModal annual}}>
-            {{annual.modules.title}}
-        </button>
-
-        {{/each}}
-
-        {{!-- Modal --}}
-        {{#if this.selectedAnnual}}
-
-        <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
-            <div class="modal-dialog modal-xl modal-dialog-scrollable">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <h5 class="modal-title text-primary">
-                            {{this.selectedAnnual.title}}
-                        </h5>
-                        <button type="button" class="btn-close" onclick={{this.closeModal}}>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
+        <div class="accordion accordion-flush" id="accordionCharts">
+            {{#each this.model.annual as |annual index|}}
+            <div class="accordion-item mb-3 border-0">
+                <h2 class="accordion-header text-primary">
+                    <button class="accordion-button rounded-pill collapsed text-primary fs-4" type="button" data-bs-toggle="collapse"
+                        style="background-color: #ecc02e;" data-bs-target="#chart{{index}}">
+                        {{annual.modules.title}}
+                    </button>
+                </h2>
+                <div id="chart{{index}}" class="accordion-collapse collapse" data-bs-parent="#accordionCharts">
+                    <div class="accordion-body">
                         <div class="row g-4">
-
-                            {{!-- Videos --}}
-                            {{#each this.selectedAnnual.modules.url as |video|}}
+                            {{#each annual.modules.video as |video|}}
                             <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="card h-100 shadow-sm">
                                     <div class="ratio ratio-16x9">
                                         <iframe src="{{video}}" title="Video" allowfullscreen></iframe>
                                     </div>
-                                </div>
-                            </div>
-                            {{/each}}
+                                    <div class="card-body">
+                                        <p class="card-text text-primary">
 
-                            {{!-- Photos --}}
-                            {{#each this.selectedAnnual.modules.photo as |photo|}}
-                            <div class="col-12 col-sm-6 col-lg-4">
-                                <div class="card h-100 shadow-sm">
-                                    <img src="{{photo}}" class="card-img-top" alt="photo">
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            </div>  
                             {{/each}}
-
                         </div>
                     </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" onclick={{this.closeModal}}>
-                            Close
-                        </button>
-                    </div>
-
                 </div>
             </div>
+            {{/each}}
         </div>
-        {{/if}}
+
 
         {{/if}}
+
+        
     </div>
 </div>
 {{outlet}}
