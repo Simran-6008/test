@@ -65,6 +65,51 @@ width: 100vw;
 	}
 }
 
+.mobile-text {
+  line-height: 1.1;   /* default se kam */
+  margin-bottom: 5px; /* niche ka gap kam */
+}
+
+.mobile-textt {
+  margin-top: 0;      /* upar ka gap hatao */
+  line-height: 1;
+}
+
+.banner-wrapper {
+	position: relative;
+	// Do NOT set overflow: hidden here — that clips the modal
+}
+
+.image-section {
+	position: relative;
+	// No z-index needed here
+}
+
+// Apply overlap ONLY on tablet and desktop
+@media (min-width: 768px) {
+	.cards-section {
+		// Use negative margin instead of z-index stacking context
+		// This pulls the section up without creating an isolated stacking context
+		margin-top: -100px;
+		position: relative;
+		// Instead of z-index on the section, use it only on the inner wrapper
+		// so no new stacking context is forced on the section itself
+	}
+
+	.cards-wrapper {
+		position: relative;
+		z-index: 10; // Scoped to wrapper, not the whole section
+	}
+}
+
+// Mobile: completely normal flow, no overlap
+@media (max-width: 767px) {
+	.cards-section {
+		margin-top: 0;
+		position: static;
+	}
+}
+
 // Landing page button
 .custom-btn {
 	background-color: #ffc107;
@@ -216,4 +261,3 @@ width: 100vw;
 		max-width: 350px;
 	}
 }
-
