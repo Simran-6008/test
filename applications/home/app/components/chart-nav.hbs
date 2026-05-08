@@ -6,35 +6,45 @@
             <img src="/assets/img/phonics-logo.jpeg" alt="logo" class="img-fluid logo-img">
         </LinkTo>
 
-        {{!-- Right: Nav Links --}}
         {{!-- DESKTOP / TABLET (md and above) --}}
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-none d-md-flex flex-row gap-3">
+
             <li class="nav-item">
-                <LinkTo @route="resources" class="nav-link text-primary fs-4">
-                    Back to Resources
+                <LinkTo @route="index" class="nav-link text-primary fs-4">
+                    <div class="home-icon-circle">
+                        <i class="fa-solid fa-house text-light"></i>
+                    </div>
                 </LinkTo>
             </li>
 
             <li class="nav-item">
-                <LinkTo @route="index" class="nav-link text-primary fs-4">
-                    Back to Home
+                <LinkTo @route="resources" class="nav-link text-primary fs-4">
+                    <div class="home-icon-circle">
+                        <i class="fa-solid fa-book-open text-light"></i>
+                    </div>
                 </LinkTo>
             </li>
         </ul>
 
         {{!-- MOBILE (below md) --}}
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex d-md-none flex-column align-items-end">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex d-md-none flex-row align-items-center gap-4">
+
             <li class="nav-item">
-                <LinkTo @route="resources" class="nav-link text-primary fs-4 py-1">
-                    Back to Resources
+                <LinkTo @route="index" class="nav-link text-primary fs-4 py-1">
+                    <div class="home-icon-circle">
+                        <i class="fa-solid fa-house text-light"></i>
+                    </div>
                 </LinkTo>
             </li>
 
             <li class="nav-item">
-                <LinkTo @route="index" class="nav-link text-primary fs-4 py-1">
-                    Back to Home
+                <LinkTo @route="resources" class="nav-link text-primary fs-4 py-1">
+                    <div class="home-icon-circle">
+                        <i class="fa-solid fa-book-open text-light"></i>
+                    </div>
                 </LinkTo>
             </li>
+
         </ul>
 
     </div>

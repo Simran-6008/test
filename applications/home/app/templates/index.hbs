@@ -1,17 +1,18 @@
 <div class="container-fluid px-0 main-container">
     <Navbar />
-    <section class="hero-section text-center mb-4">
-        {{!-- Heading --}}
+    <section class="hero-section text-center ">
         {{!-- Desktop + Tablet --}}
         <h1 class="mt-4 text-primary d-none d-md-block">
             Welcome to FiRST PiCk Phonics
         </h1>
+        <h3 class="text-primary d-none d-md-block">
+            Every Child Can Read!
+        </h3>
 
         {{!-- Mobile --}}
         <h2 class="mobile-text mt-4 text-primary d-block d-md-none">
             Welcome to FiRST PiCk Phonics
         </h2>
-        <h4 class="mobile-textt text-primary">Every Child Can Read!</h4>
 
     </section>
 
@@ -24,13 +25,22 @@
         </section>
 
         {{!-- Mobile Banner --}}
-        <section class="image-section d-block d-md-none">
+        <section class="image-section d-block d-md-none position-relative">
+
             <img src="/assets/img/mobilebanner.jpeg" class="hero-image w-100" alt="students">
+
+            {{!-- Text on image bottom --}}
+            <div class="mobile-banner-text">
+                <p class="mobile-banner-heading mb-0">
+                    Every Child Can Read!
+                </p>
+            </div>
+
         </section>
 
 
-        {{!-- .......................CARD SECTION........................ --}}
-        <section class="cards-section">
+        {{!-- .......................CARD SECTION DESKTOP AND TABLET........................ --}}
+        <section class="cards-section d-none d-md-block">
             <div class="cards-wrapper d-flex justify-content-center align-items-center gap-3 my-4">
 
                 {{!-- CARD 1 --}}
@@ -96,6 +106,58 @@
                         <button class="arrow-btn" data-bs-toggle="modal" data-bs-target="#modal2" type="button">
                             <i class="bi bi-arrow-right"> →</i>
                         </button>
+                    </LinkTo>
+                </div>
+
+            </div>
+        </section>
+
+
+        {{!-- .....................CARD SECTION FOR MOBILE DISPLAY --}}
+        <section class="d-block d-md-none">
+            <div class=" d-flex flex-column gap-4 text-center mt-3 align-items-center justify-content-center">
+
+                {{!-- Card 1 --}}
+                <div class="mobile-card position-relative" role="button" data-bs-toggle="modal"
+                    data-bs-target="#facilitationModal">
+                    <div class="icon-circle-mobile d-flex align-items-center justify-content-center mx-auto">
+                        <i class="fa-solid fa-circle-info text-light fs-1"></i>
+                    </div>
+
+                    <h2 class="card-title mt-3 fs-3 text-primary">About</h2>
+
+                    <p class="card-subtitle text-primary">
+                        Learn more about our program
+                    </p>
+                </div>
+
+                {{!-- Card 2 --}}
+                <div class="mobile-card position-relative" role="button" data-bs-toggle="modal"
+                    data-bs-target="#facilitationNoteModal">
+                    <div class="icon-circle-mobile d-flex align-items-center justify-content-center mx-auto">
+                        <i class="fa-solid fa-file-lines text-light fs-1"></i>
+                    </div>
+
+                    <h2 class="card-title mt-3 fs-3 text-primary">Facilitation Note</h2>
+
+                    <p class="card-subtitle text-primary">
+                        Guidelines and notes for facilitators
+                    </p>
+                </div>
+
+                {{!-- Card 3 --}}
+
+                <div class="mobile-card mb-3">
+                    <LinkTo @route="resources" class="text-decoration-none">
+                        <div class="icon-circle-mobile d-flex align-items-center justify-content-center mx-auto">
+                            <i class="fa-solid fa-book-open text-light fs-1"></i>
+                        </div>
+
+                        <h2 class="card-title mt-3 fs-3 text-primary">Resources</h2>
+
+                        <p class="card-subtitle text-primary">
+                            Educational materials and tools
+                        </p>
                     </LinkTo>
                 </div>
 
