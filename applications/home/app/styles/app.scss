@@ -297,5 +297,44 @@ width: 100vw;
 }
 
 
+/* CARD */
+.vocabulary-card{
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
 
+/* IMAGE */
+.vocabulary-card img{
+    height: 250px;
+    object-fit: cover;
+}
+
+/* TOOLTIP BOX */
+.custom-tooltip{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: rgba(0,0,0,0.7);
+
+    padding: 12px 18px;
+    border-radius: 12px;
+
+    display: flex;
+    gap: 10px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+}
+
+/* SHOW ON HOVER */
+.vocabulary-card:hover .custom-tooltip{
+    opacity: 1;
+    visibility: visible;
+}
 

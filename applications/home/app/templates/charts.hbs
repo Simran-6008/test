@@ -22,7 +22,8 @@
             {{#each this.filteredCharts as |chart index|}}
             <div class="accordion-item mb-1">
                 <h2 class="accordion-header text-primary">
-                    <button class="accordion-button collapsed text-primary fs-4 bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#chart{{index}}">
+                    <button class="accordion-button collapsed text-primary fs-4 bg-warning" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#chart{{index}}">
                         {{chart.modules.title}}
                     </button>
                 </h2>
@@ -55,12 +56,98 @@
         <h3 class="text-center mb-4">Vocabulary</h3>
         <div class="container my-4">
             <div class="row g-4">
-                {{#each this.model.vocabulary as |vocabulary|}}
+                {{#each this.model.vocabulary as |vocabulary index|}}
                 <div class="col-12 col-sm-6 col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <img src="{{vocabulary.modules.photo}}" class="card-img-top" alt="card1">
+                    <div class="card h-100 shadow-sm vocabulary-card position-relative">
+                        <img src="{{vocabulary.modules.photo}}" class="card-img-top" alt="card{{index}}">
+                        <!-- TOOLTIP STYLE BOX -->
+                        <div class="custom-tooltip">
+
+                            <!-- IMAGE BUTTON -->
+                            <button class="btn btn-light btn-sm" type="button" data-bs-toggle="modal"
+                                data-bs-target="#imageModal{{index}}">
+                                Image
+                            </button>
+
+                            <!-- VIDEO BUTTON -->
+                            <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal"
+                                data-bs-target="#videoModal{{index}}">
+                                Video
+                            </button>
+
+                        </div>
+
+
                         <div class="card-body">
                             <h2 class="card-title text-center">{{vocabulary.modules.title}}</h2>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- IMAGE MODAL -->
+                <div class="modal fade" id="imageModal{{index}}" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title">
+                                    {{vocabulary.modules.title}} Image
+                                </h5>
+
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <div class="modal-body text-center">
+                                <div class="row g-3">
+
+                                    {{#each vocabulary.modules.imageurl as |image|}}
+
+                                    <div class="col-6">
+
+                                        <img src="{{image.sm.url}}" class="img-fluid rounded shadow-sm w-100"
+                                            style="height: 250px; object-fit: cover;" alt="image">
+                                    </div>
+
+                                    {{/each}}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- VIDEO MODAL -->
+                <div class="modal fade" id="videoModal{{index}}" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title">
+                                    {{vocabulary.modules.title}} Video
+                                </h5>
+
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="row g-3">
+
+                                    {{#each vocabulary.modules.videourl as |video|}}
+
+                                    <div class="col-12">
+                                        <video class="w-100 rounded shadow-sm" controls>
+                                            <source src="{{video.url}}" type="video/mp4">
+                                        </video>
+
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -95,8 +182,8 @@
             {{#each this.model.annual as |annual index|}}
             <div class="accordion-item mb-3 border-0">
                 <h2 class="accordion-header text-primary">
-                    <button class="accordion-button  collapsed text-primary fs-4" type="button" data-bs-toggle="collapse"
-                        style="background-color: #ecc02e;" data-bs-target="#chart{{index}}">
+                    <button class="accordion-button  collapsed text-primary fs-4" type="button"
+                        data-bs-toggle="collapse" style="background-color: #ecc02e;" data-bs-target="#chart{{index}}">
                         {{annual.modules.title}}
                     </button>
                 </h2>
@@ -115,7 +202,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>  
+                            </div>
                             {{/each}}
                         </div>
                     </div>
@@ -127,7 +214,7 @@
 
         {{/if}}
 
-        
+
     </div>
 </div>
 {{outlet}}
