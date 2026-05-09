@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-$font-family-sans-serif: "Arimo", sans-serif !default;
-$display-font-family: "Arimo", sans-serif !default;
+$font-family-sans-serif: "Merriweather", serif !default;
+$display-font-family: "Merriweather", serif !default;
 
 $primary: #031a63 !default;
 $secondary: #f5f5f5 !default;
@@ -66,7 +66,6 @@ width: 100vw;
 	color: #fff;
 	font-size: 24px;
 	font-weight: 700;
-	letter-spacing: 1px;
 
 	/* Strong shadow for visibility */
 	text-shadow:
@@ -101,9 +100,13 @@ width: 100vw;
 }
 
 .mobile-card .card-subtitle {
-	font-size: 16px;
+	font-size: 14px;
 	margin-bottom: 0;
 	line-height: 1.5;
+}
+
+.mobile-text{
+	font-weight: 550;
 }
 
 /* Default (mobile first) */
