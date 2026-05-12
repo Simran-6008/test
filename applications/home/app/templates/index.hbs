@@ -10,7 +10,7 @@
         </h3>
 
         {{!-- Mobile --}}
-        <h3 class="mobile-text mt-3 d-block d-md-none text-primary">
+        <h3 class="mobile-text mt-4 d-block d-md-none text-primary" style="margin-bottom: -5px">
             Welcome to FiRST PiCk Phonics
         </h3>
 
@@ -25,7 +25,7 @@
         </section>
 
         {{!-- Mobile Banner --}}
-        <section class="image-section d-block d-md-none position-relative" style="margin-top: -1px;">
+        <section class="image-section d-block d-md-none position-relative">
 
             <img src="/assets/img/mobilebanner.jpeg" class="hero-image w-100" alt="students">
 
@@ -75,7 +75,7 @@
                         <i class="fa-solid fa-file-lines text-light" style="font-size: 35px;"></i>
                     </div>
 
-                    <h1 class="card-title mt-3">Facilitation Note</h1>
+                    <h1 class="card-title mt-3">Facilitation Notes</h1>
                     <p class="card-subtitle">Guidelines and notes for facilitators</p>
 
                     <button class="arrow-btn" data-bs-toggle="modal" data-bs-target="#modal2" type="button">
@@ -115,23 +115,60 @@
 
         {{!-- .....................CARD SECTION FOR MOBILE DISPLAY --}}
         <section class="d-block d-md-none">
-            <div class=" d-flex flex-column gap-4 text-center mt-3 align-items-center justify-content-center">
+            <div class="parent-div d-flex flex-column align-items-center gap-3 mt-4">
 
-                {{!-- Card 1 --}}
+                <div class="w-100 d-flex justify-content-center position-relative" role="button" data-bs-toggle="modal"
+                    data-bs-target="#facilitationModal">
+                    <button type="button"
+                        class="about-btn btn-light w-80 d-flex align-items-center justify-content-start gap-2">
+
+                        <div class="white-circle d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-circle-info text-white fs-1"></i>
+                        </div>
+
+                        <span class="text-primary fs-5">About</span>
+
+                    </button>
+                </div>
+
+                <div class="w-100 d-flex justify-content-center position-relative" role="button" data-bs-toggle="modal"
+                    data-bs-target="#facilitationNoteModal">
+                    <button type="button"
+                        class="about-btn btn-light w-80 d-flex align-items-center justify-content-start gap-2">
+
+                        <div class="white-circle d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-file-lines text-light fs-1"></i>
+                        </div>
+
+                        <span class="text-primary fs-5">Facilitation Notes</span>
+
+                    </button>
+                </div>
+                <LinkTo @route="resources" @tagName="button" class="about-btn btn-light w-80 d-flex align-items-center justify-content-start gap-2 text-decoration-none">
+                    <div class="white-circle d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-book-open text-light fs-1"></i>
+                    </div>
+
+                    <span class="text-primary fs-5">Resources</span>
+                </LinkTo>
+            </div>
+            {{!-- <div class=" d-flex flex-column gap-4 text-center mt-3 align-items-center justify-content-center">
+
+
                 <div class="mobile-card position-relative" role="button" data-bs-toggle="modal"
                     data-bs-target="#facilitationModal">
                     <div class="icon-circle-mobile d-flex align-items-center justify-content-center mx-auto">
                         <i class="fa-solid fa-circle-info text-light fs-1"></i>
                     </div>
 
-                    <h2 class="card-title mt-3 fs-5 text-primary">About</h2>
+                    <h2 class="card-title mt-1 fs-5 text-primary">About</h2>
 
                     <p class="card-subtitle text-primary">
                         Learn more about our program
                     </p>
                 </div>
 
-                {{!-- Card 2 --}}
+
                 <div class="mobile-card position-relative" role="button" data-bs-toggle="modal"
                     data-bs-target="#facilitationNoteModal">
                     <div class="icon-circle-mobile d-flex align-items-center justify-content-center mx-auto">
@@ -145,7 +182,7 @@
                     </p>
                 </div>
 
-                {{!-- Card 3 --}}
+
 
                 <div class="mobile-card mb-5">
                     <LinkTo @route="resources" class="text-decoration-none">
@@ -161,7 +198,7 @@
                     </LinkTo>
                 </div>
 
-            </div>
+            </div> --}}
         </section>
     </div>
 

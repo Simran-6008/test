@@ -52,10 +52,35 @@ width: 100vw;
 
 @import "ember-power-select";
 
+.w-80 {
+	width: 80%;
+}
+
+.white-circle {
+	width: 50px;
+	height: 50px;
+	background-color: #ecc02e;
+	border-radius: 50%;
+}
+
+.about-btn {
+	width: 80%;
+	background: #ffffff;
+	border: none;
+	border-radius: 18px;
+	padding: 14px 20px;
+
+	/* Elegant static shadow */
+	box-shadow:
+		0 4px 10px rgba(0, 0, 0, 0.08),
+		0 10px 25px rgba(0, 0, 0, 0.10),
+		0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
 // ...........MOBILE TEXT OVERLAY ON IMAGE..............
 .mobile-banner-text {
 	position: absolute;
-	bottom: 5px;
+	bottom: 0px;
 	left: 0;
 	width: 100%;
 	text-align: center;
@@ -64,7 +89,7 @@ width: 100vw;
 
 .mobile-banner-heading {
 	color: #fff;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 700;
 
 	/* Strong shadow for visibility */
@@ -105,20 +130,20 @@ width: 100vw;
 	line-height: 1.5;
 }
 
-.mobile-text{
+.mobile-text {
 	font-weight: 550;
 }
 
 /* Default (mobile first) */
 .logo-img {
-	height: 100px;
+	height: 150px;
 	width: auto;
 }
 
 /* Tablet & Desktop */
 @media (min-width: 768px) {
 	.logo-img {
-		height: 150px;
+		height: 200px;
 	}
 }
 
@@ -301,43 +326,42 @@ width: 100vw;
 
 
 /* CARD */
-.vocabulary-card{
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
+.vocabulary-card {
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
 }
 
 /* IMAGE */
-.vocabulary-card img{
-    height: 250px;
-    object-fit: cover;
+.vocabulary-card img {
+	height: 250px;
+	object-fit: cover;
 }
 
 /* TOOLTIP BOX */
-.custom-tooltip{
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.custom-tooltip {
+	position: absolute;
+	top: 50%;
+	left: 50%;
 
-    transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 
-    background: rgba(0,0,0,0.7);
+	background: rgba(0, 0, 0, 0.7);
 
-    padding: 12px 18px;
-    border-radius: 12px;
+	padding: 12px 18px;
+	border-radius: 12px;
 
-    display: flex;
-    gap: 10px;
+	display: flex;
+	gap: 10px;
 
-    opacity: 0;
-    visibility: hidden;
+	opacity: 0;
+	visibility: hidden;
 
-    transition: 0.3s;
+	transition: 0.3s;
 }
 
 /* SHOW ON HOVER */
-.vocabulary-card:hover .custom-tooltip{
-    opacity: 1;
-    visibility: visible;
+.vocabulary-card:hover .custom-tooltip {
+	opacity: 1;
+	visibility: visible;
 }
-
