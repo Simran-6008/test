@@ -3,6 +3,7 @@ import {
   service
 } from '@ember/service';
 
+
 export default class ChartsRoute extends Route {
   @service store;
 
@@ -41,5 +42,11 @@ export default class ChartsRoute extends Route {
       spoken: spoken,
       annual: annual
     };
+  }
+
+  setupController(controller, model) {
+    super.setupController(controller, model);
+    // Pehli baar listeners lagao
+    controller.attachAccordionListeners();
   }
 }
