@@ -44,4 +44,7 @@ export default class ChartsController extends Controller {
     closeModal() {
         this.selectedAnnual = null;
     }
+
+
+    
 }
