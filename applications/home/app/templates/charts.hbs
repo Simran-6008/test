@@ -11,8 +11,8 @@
         <div class="d-flex mb-3 justify-content-center">
             <div class="d-flex">
                 <input class="form-control me-2 text-primary w-auto" type="search" placeholder="Search chart"
-                    aria-label="Search" oninput={{this.onInputChange}} id="searchInput">
-                <button class="btn btn-outline-warning" type="button" onclick={{this.doSearch}}>
+                    aria-label="Search" {{on "input" this.onInputChange}} id="searchInput">
+                <button class="btn btn-outline-warning" type="button" {{on "click" this.doSearch}}>
                     <span class="text-primary">Search</span>
                 </button>
             </div>
@@ -103,10 +103,14 @@
 
                                     {{#each vocabulary.modules.imageurl as |image|}}
 
-                                    <div class="col-6">
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <div class="card h-100 shadow-sm">
+                                            <div class="ratio ratio-16x9">
+                                                <img src="{{image.sm.url}}" class="img-fluid rounded shadow-sm w-100"
+                                                    alt="image">
+                                            </div>
 
-                                        <img src="{{image.sm.url}}" class="img-fluid rounded shadow-sm w-100"
-                                            style="height: 250px; object-fit: cover;" alt="image">
+                                        </div>
                                     </div>
 
                                     {{/each}}
@@ -136,14 +140,11 @@
 
                             <div class="modal-body">
                                 <div class="row g-3">
-
                                     {{#each vocabulary.modules.videourl as |video|}}
-
                                     <div class="col-12 col-sm-6 col-lg-4">
                                         <div class="card h-100 shadow-sm">
                                             <div class="ratio ratio-16x9">
-                                                <iframe src="{{video}}" title="Video"
-                                                    allowfullscreen></iframe>
+                                                <iframe src="{{video}}" title="Video" allowfullscreen></iframe>
                                             </div>
                                             <div class="card-body">
                                                 <p class="card-text text-primary">

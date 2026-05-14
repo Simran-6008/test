@@ -9,9 +9,7 @@ export default class ChartsRoute extends Route {
 
   queryParams = {
     type: {
-      type: {
-        refreshModel: true
-      }
+      refreshModel: true
     }
   };
 
@@ -28,8 +26,8 @@ export default class ChartsRoute extends Route {
     let chartArray = [...chart];
 
     let sortedCharts = chartArray.sort((a, b) => {
-      let numA = parseInt(a.modules.title.replace(/\D/g, '')) || 0;
-      let numB = parseInt(b.modules.title.replace(/\D/g, '')) || 0;
+      let numA = parseInt((a.modules?.title || '').replace(/\D/g, '')) || 0;
+      let numB = parseInt((b.modules?.title || '').replace(/\D/g, '')) || 0;
 
       return numA - numB;
     });
