@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div class="accordion accordion-flush" id="accordionCharts" >
+        <div class="accordion accordion-flush" id="accordionCharts">
             {{#each this.filteredCharts as |chart index|}}
             <div class="accordion-item mb-1">
                 <h2 class="accordion-header text-primary">
@@ -139,11 +139,18 @@
 
                                     {{#each vocabulary.modules.videourl as |video|}}
 
-                                    <div class="col-12">
-                                        <video class="w-100 rounded shadow-sm" controls>
-                                            <source src="{{video.url}}" type="video/mp4">
-                                        </video>
+                                    <div class="col-12 col-sm-6 col-lg-4">
+                                        <div class="card h-100 shadow-sm">
+                                            <div class="ratio ratio-16x9">
+                                                <iframe src="{{video}}" title="Video"
+                                                    allowfullscreen></iframe>
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="card-text text-primary">
 
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                     {{/each}}
                                 </div>
@@ -194,7 +201,7 @@
                             <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="card h-100 shadow-sm">
                                     <div class="ratio ratio-16x9">
-                                        <iframe src="{{video}}" title="Video" allowfullscreen></iframe>
+                                        <iframe src="" data-src={{video}} title="Video" allowfullscreen></iframe>
                                     </div>
                                     <div class="card-body">
                                         <p class="card-text text-primary">
