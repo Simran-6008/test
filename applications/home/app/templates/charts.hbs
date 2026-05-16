@@ -125,7 +125,7 @@
                 </div>
 
                 <!-- VIDEO MODAL -->
-                <div class="modal fade" id="videoModal{{index}}" tabindex="-1" aria-hidden="true">
+                <div class="modal fade" id="videoModal{{index}}" tabindex="-1" aria-hidden="true" {{did-insert (fn this.setupModalListener (concat "videoModal" index))}}>
                     <div class="modal-dialog modal-dialog-centered modal-lg">
 
                         <div class="modal-content">

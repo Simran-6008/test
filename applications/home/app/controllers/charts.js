@@ -77,5 +77,20 @@ export default class ChartsController extends Controller {
     }, 300);
   }
 
+  @action
+  setupModalListener(modalId) {
+    later(() => {
+      let modal = document.getElementById(modalId);
 
+      if (!modal) return;
+
+      modal.addEventListener('hidden.bs.modal', () => {
+        modal.querySelectorAll('iframe').forEach((iframe) => {
+          let src = iframe.src;
+          iframe.src = '';
+          iframe.src = src;
+        });
+      });
+    }, 100);
+  }
 }
