@@ -141,21 +141,62 @@
 
 
         {{#if (eq this.model.type "spoken")}}
+
         <h3 class="text-center mb-3">Spoken English Activity</h3>
-        <div class="row g-4">
-            {{#each this.model.spoken as |spoken|}}
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="ratio ratio-16x9">
-                        <iframe src="{{spoken.modules.url}}" title="Video" allowfullscreen></iframe>
+
+        <div class="accordion accordion-flush" id="accordionCharts">
+
+            {{#each this.model.spoken as |spoken index|}}
+
+            <div class="accordion-item mb-2 border-0 shadow-sm overflow-hidden rounded-0">
+
+                <h2 class="accordion-header">
+
+                    <button class="accordion-button collapsed text-primary fs-6  bg-warning rounded-0"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#spoken{{index}}" aria-expanded="false"
+                        aria-controls="spoken{{index}}">
+
+                        {{spoken.modules.title}}
+
+                    </button>
+
+                </h2>
+
+                <div id="spoken{{index}}" class="accordion-collapse collapse" data-bs-parent="#accordionCharts">
+
+                    <div class="accordion-body">
+
+                        <div class="row g-4">
+
+                            {{#each spoken.modules.url as |video|}}
+
+                            <div class="col-12 col-sm-6 col-lg-4">
+
+                                <div class="card h-100 shadow-sm border-0 rounded-0">
+
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src={{video}} title="Spoken English Video" allowfullscreen>
+                                        </iframe>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {{/each}}
+
+                        </div>
+
                     </div>
-                    <div class="card-body">
-                        <p class="card-text">{{spoken.modules.title}}</p>
-                    </div>
+
                 </div>
+
             </div>
+
             {{/each}}
+
         </div>
+
         {{/if}}
 
 
@@ -166,8 +207,8 @@
             {{#each this.model.annual as |annual index|}}
             <div class="accordion-item mb-1 border-0">
                 <h2 class="accordion-header text-primary">
-                    <button class="accordion-button  collapsed text-primary fs-5" type="button"
-                        data-bs-toggle="collapse" style="background-color: #ecc02e;" data-bs-target="#chart{{index}}">
+                    <button class="accordion-button  collapsed text-primary fs-5 bg-warning" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#chart{{index}}">
                         {{annual.modules.title}}
                     </button>
                 </h2>
