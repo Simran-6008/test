@@ -39,17 +39,17 @@ export default class ChartsController extends Controller {
     }
   }
 
-  @action
-  openModal(annual) {
-    this.selectedAnnual = annual;
-    console.log('openModal:', annual.modules); // data check karo
-  }
+  // @action
+  // openModal(annual) {
+  //   this.selectedAnnual = annual;
+  //   console.log('openModal:', annual.modules); // data check karo
+  // }
 
   // Modal close
-  @action
-  closeModal() {
-    this.selectedAnnual = null;
-  }
+  // @action
+  // closeModal() {
+  //   this.selectedAnnual = null;
+  // }
   attachAccordionListeners() {
     later(() => {
       const accordionEl = document.getElementById('accordionCharts');
@@ -77,20 +77,5 @@ export default class ChartsController extends Controller {
     }, 300);
   }
 
-  @action
-  setupModalListener(modalId) {
-    later(() => {
-      let modal = document.getElementById(modalId);
-
-      if (!modal) return;
-
-      modal.addEventListener('hidden.bs.modal', () => {
-        modal.querySelectorAll('iframe').forEach((iframe) => {
-          let src = iframe.src;
-          iframe.src = '';
-          iframe.src = src;
-        });
-      });
-    }, 100);
-  }
+  
 }

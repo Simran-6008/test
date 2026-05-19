@@ -44,7 +44,7 @@ export default class ChartsRoute extends Route {
 
   setupController(controller, model) {
     super.setupController(controller, model);
-    // Pehli baar listeners lagao
+  
     controller.attachAccordionListeners();
   }
 }
